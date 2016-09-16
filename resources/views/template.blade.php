@@ -39,7 +39,7 @@
             </aside>
 
             <div id="footer">
-                @yield('footer')
+               @yield('footer')
             </div>
         </section>
     </body>
