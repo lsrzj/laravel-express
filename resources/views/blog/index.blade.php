@@ -17,6 +17,11 @@
             </div>
             <footer class="meta">
                 <p>Comments: <a href="#comments">{{ $post->comments->count() }}</a></p>
+                <p>Tags:
+                    @foreach ($post->tags as $tag)
+                        <a href="/tag/{{ $tag->name }}">{{ $tag->name }}</a>
+                    @endforeach
+                </p>
                 <p>Posted by <span class="highlight">{{ $post->author }}</span> at {{ $post->created_at->format('H:i:s') }}
             </footer>   
         </article>            
@@ -29,25 +34,9 @@
             <h3>Tag Cloud</h3>
         </header>
         <p class="tags">
-            <span class="weight-1">paradise</span>
-            <span class="weight-1">magic</span>
-            <span class="weight-1">grid</span>
-            <span class="weight-1">laravel51</span>
-            <span class="weight-1">dead</span>
-            <span class="weight-1">misdirection</span>
-            <span class="weight-5">symblog</span>
-            <span class="weight-1">daftpunk</span>
-            <span class="weight-2">hacking</span>
-            <span class="weight-1">zero</span>
-            <span class="weight-1">one</span>
-            <span class="weight-1">alive</span>
-            <span class="weight-1">leaky</span>
-            <span class="weight-1">binary</span>
-            <span class="weight-1">pool</span>
-            <span class="weight-1">hacked</span>
-            <span class="weight-4">movie</span>
-            <span class="weight-1">php</span>
-            <span class="weight-1">!trusting</span>
+            @foreach ($tags as $tag)
+                <span class="weight-1">{{ $tag->name }}</span>
+            @endforeach
         </p>
     </section>
 

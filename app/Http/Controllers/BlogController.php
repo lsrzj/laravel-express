@@ -8,12 +8,14 @@
 
 namespace App\Http\Controllers;
 use App\Post;
+use App\Tag;
 
 class BlogController extends Controller {
 
     public function index() {
-        $posts = Post::All();
-        return view('blog.index', compact('posts'));
+        $posts = Post::all();
+        $tags = Tag::all();
+        return view('blog.index', compact('posts', 'tags'));
     }
 
 }
