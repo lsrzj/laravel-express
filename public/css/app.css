@@ -2391,6 +2391,7 @@ input[type="search"] {
 }
 .form-group {
   margin-bottom: 15px;
+  vertical-align: middle;
 }
 .radio,
 .checkbox {
@@ -6231,3 +6232,5 @@ label,
 .checkbox label {
   font-weight: 300;
 }
+
+
