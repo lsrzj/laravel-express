@@ -4,7 +4,7 @@
     @foreach ($posts as $post)
         <article class="blog">
             <div class="date">
-                <time datetime="{{ $post->created_at }}">{{ $post->created_at->format('d/m/Y') }}</time>
+                <time datetime="{{ $post->created_at }}">{{ $post->created_at->format('l, F j, Y') }}</time>
             </div>
             <header>
                 <h2><a href="#">{{ $post->title }}</a></h2>

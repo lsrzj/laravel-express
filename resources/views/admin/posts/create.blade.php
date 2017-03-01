@@ -12,8 +12,12 @@
         </ul>
     @endif
     
-    {!! form::open(['route' => 'admin.posts.store', 'method' => 'POST']) !!}
+    {!! form::open(['route' => 'admin.posts.store', 'method' => 'POST', 'class' => 'blogger']) !!}
         @include('admin.posts._form')
+        <div class="form-group">
+            {!! form::label('tags', 'Tags:', ['class' => 'control-label']) !!}
+            {!! form::text('tags', null, ['class' => 'form-control']) !!}
+        </div>
 
         <div class="form-group">
             {!! form::submit('Create Post', ['class' => 'btn btn-primary']) !!}

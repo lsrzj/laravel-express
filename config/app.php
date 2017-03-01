@@ -144,7 +144,8 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        \Collective\Html\HtmlServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
 
     ],
 
@@ -193,8 +194,9 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-        'form'      => \Collective\Html\FormFacade::class,
-        'html'      => \Collective\Html\HtmlFacade::class,
+        'form'      => Collective\Html\FormFacade::class,
+        'html'      => Collective\Html\HtmlFacade::class,
+        'Alert'     => UxWeb\SweetAlert\SweetAlert::class,
 
     ],
 

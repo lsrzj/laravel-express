@@ -10,10 +10,13 @@
             @endforeach
         </ul>
     @endif
-    {!! form::model($post, ['route' => ['admin.posts.update', $post->id], 'method' => 'PUT']) !!}
+    {!! form::model($post, ['route' => ['admin.posts.update', $post->id], 'method' => 'PUT', 'class' => 'blogger']) !!}
     
         @include('admin.posts._form')
-
+        <div class="form-group">
+            {!! form::label('tags', 'Tags:', ['class' => 'control-label']) !!}
+            {!! form::text('tags', $post->tagList, ['class' => 'form-control']) !!}
+        </div>
         <div class="form-group">
             {!! form::submit('Save', ['class' => 'btn btn-primary']) !!}
         </div>    
