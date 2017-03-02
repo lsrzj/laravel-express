@@ -13,21 +13,10 @@
 
 Route::get('/', ['as' => 'index', 'uses' => 'BlogController@index']);
 
-Route::get('/auth', function() {
-    if (Auth::attempt(['email' => 'admin@larablog.com', 'password' => '123456'])) {
-        return "oi";
-    }
-    return "fail";
-});
-
-Route::get('/auth/logout', function() {
-    Auth::logout();
-});
-
-Route::get('auth/login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@getLogin']);
-Route::post('auth/login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@postLogin']);
-
-Route::get('auth/logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController@getLogout']);
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController'
+]);
 
 //The auth middleware is being used to make sure that only authenticated users can access admin pages
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {

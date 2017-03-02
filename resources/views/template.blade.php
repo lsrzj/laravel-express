@@ -24,9 +24,9 @@
                                 <li><a href="#">About</a></li>
                                 <li><a href="#">Contact</a></li>
                                 @if(!Auth::check())
-                                    <li>{!! link_to_route ('auth.login', 'Login') !!}</li>
+                                    <li>{!! link_to ('/auth/login', 'Login') !!}</li>
                                 @else
-                                    <li>{!! link_to_route ('auth.logout', 'Logout') !!}</li>
+                                    <li>{!! link_to ('/auth/logout', 'Logout') !!}</li>
                                 @endif
                             </ul>
                         </nav>
