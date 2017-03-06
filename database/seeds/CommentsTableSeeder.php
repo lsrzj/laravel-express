@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Tag;
 
-class TagTableSeeder extends Seeder
+class CommentsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +11,7 @@ class TagTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('tags')->delete();
-        factory('App\Tag', 100)->create();
+        DB::table('comments')->delete();
+        factory('App\Comment', 20)->create();
     }
 }

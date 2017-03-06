@@ -146,6 +146,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+        App\Providers\PostModelServiceProvider::class
 
     ],
 

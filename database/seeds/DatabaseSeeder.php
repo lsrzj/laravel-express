@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder {
      */
     public function run() {
         Model::unguard();
+
         factory('App\User')->create(
             [
                 'name' => 'admin',
@@ -20,9 +21,14 @@ class DatabaseSeeder extends Seeder {
                 'remember_token' => str_random(10),
             ]
         );
-
+        
+        $user = App\User::find(1);
+        Auth::login($user);
+        
         $this->call('PostsTableSeeder');
-        $this->call('TagTableSeeder');
+        $this->call('TagTableSeeder');        
+        $this->call('PostsTagsTableSeeder');
+        $this->call('CommentsTableSeeder');
 
         Model::reguard();
     }

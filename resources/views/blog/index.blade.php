@@ -22,7 +22,7 @@
                         <a href="/tag/{{ $tag->name }}">{{ $tag->name }}</a>
                     @endforeach
                 </p>
-                <p>Posted by <span class="highlight">{{ $post->author }}</span> at {{ $post->created_at->format('H:i:s') }}
+                <p>Posted by <span class="highlight">{{ $post->user->name }}</span> at {{ $post->created_at->format('H:i:s') }}
             </footer>   
         </article>            
     @endforeach
