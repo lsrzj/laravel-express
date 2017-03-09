@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\SQLiteConnection;
 use Illuminate\Support\Facades\DB;
+use \Doctrine\DBAL\Types\Type;
+use App\Doctrine\CarbonType;
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -18,6 +20,8 @@ class AppServiceProvider extends ServiceProvider {
         if (DB::connection() instanceof SQLiteConnection) {
             DB::statement(DB::raw('PRAGMA foreign_keys=1'));
         }
+
+        Type::overrideType('datetime', CarbonType::class);        
     }
 
     /**

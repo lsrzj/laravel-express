@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace App\Http\Controllers;
 use App\Post;
 use App\Tag;
@@ -19,3 +13,25 @@ class BlogController extends Controller {
     }
 
 }
+
+/*<?php
+
+namespace App\Http\Controllers;
+
+use Doctrine\ORM\EntityManagerInterface;
+
+class BlogController extends Controller {
+
+    protected $em;
+
+    public function __construct(EntityManagerInterface $em) {
+        $this->em = $em;
+    }
+
+    public function index() {
+        $posts = $this->em->getRepository('App\Entities\Post')->findAll();
+        $tags = $this->em->getRepository('App\Entities\Tag')->findAll();
+        return view('blog.index', compact('posts', 'tags'));
+    }
+
+}*/
